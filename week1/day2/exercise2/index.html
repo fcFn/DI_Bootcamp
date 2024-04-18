@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 50px;
+        background: lightgrey;
+        align-items: center;
+        margin: 0;
+      }
+      header div {
+        flex: 1 0 0;
+        font-family: arial;
+      }
+      /* A rounded corner button with blue background and white text */
+      header button {
+        background-color: #4285f4;
+        color: white;
+        border-radius: 12px;
+        border: 0;
+        padding: 10px 20px;
+      }
+      .hero {
+    background-image: url('https://images.pexels.com/photos/1655166/pexels-photo-1655166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+    }
+      .hero h1 {
+        color: white;
+        font-size: 36px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    .hero form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+gap: 5px;}
+    .hero input {
+        border-radius: 5px;
+        height: 30px;
+        border: 1px solid lightblue;
+        font-family: sans-serif;
+        padding: 0 10px;
+        flex: 0 0 300px;
+    }
+    .hero button {
+        border-radius: 3px;
+        width: 100px;
+        height: 32px;
+        border: 0;
+        background-color: #4285f4;
+        color: white;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>Start Bootstrap</div>
+      <button>Sign In</button>
+    </header>
+      <main>
+        <section class="hero">
+          <h1
+            >Build a landing page for your business or project and generate more
+            leads!</h1
+          >
+          <form>
+              <input placeholder="Enter your email..."/>
+              <button>Sign up!</button>
+            </form>
+        </section>
+      </main>
+    </header>
+  </body>
+</html>

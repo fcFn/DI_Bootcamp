@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100%;
+}
+
+.col__outer {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.col__outer:hover .icons {
+  display: block;
+}
+.col__inner {
+  margin: 0 auto;
+  position: relative;
+  width: max-content;
+  padding-bottom: 10px;
+}
+.col__inner:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.col__inner div {
+  margin: 0 auto;
+  width: max-content;
+}
+.col__inner .icons {
+  position: relative;
+  top: 50%;
+  display: none;
+}
+.tooltip {
+  display: none;
+  font-family: sans-serif;
+}
+.icon {
+  position: relative;
+}
+.icon:hover .tooltip {
+  display: block;
+}
+.icon .tooltip {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 5px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+.icon .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  transform: translateX(-50%);
+}
+.icons .icon {
+  float: left;
+  margin: 0 5px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  transform: translateY(-50%);
+  position: relative;
+}
+.icons .icon:hover {
+  background-color: seagreen;
+}
+.col__inner .col__image {
+  background-image: url("https://fastly.picsum.photos/id/859/200/300.jpg?hmac=Ty9c6r04FYgwfkw5JMqSLG_eMq0RxeaMTAArotTX6Qk");
+  background-size: cover;
+  width: 200px;
+  height: 300px;
+  position: relative;
+}
+
+.col__outer:first-child {
+  padding-left: 0;
+}
+
+.col__outer:last-child {
+  padding-right: 0;
+}
+
+.col__inner .price {
+  color: green;
+  height: 25px;
+  margin: 10px auto;
+}
+
+.strike {
+  color: gray;
+  font-size: 0.8em;
+  text-decoration: line-through;
+  vertical-align: baseline;
+  margin: 0 10px;
+}
+
+.add-to-cart {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  margin: 1em auto 1.5em auto;
+  display: block;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+  font-weight: bold;
+}
+.add-to-cart:hover {
+  background-color: seagreen;
+}
+
+.col__inner .badge-new,
+.col__inner .badge-discount {
+  display: table;
+  border-radius: 999px;
+  background-color: seagreen;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 0.8em;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 2%;
+  left: 15px;
+}
+
+.col__inner .badge-discount {
+  background-color: maroon;
+  font-weight: bold;
+  font-family: sans-serif;
+  left: unset;
+  right: 15px;
+}
+
+.col__inner .badge-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 768px) {
+  .col__outer {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .col__outer {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .col__outer {
+    width: 16.66%;
+  }
+  .col__inner .col__image {
+    width: 190px;
+  }
+}

@@ -1,0 +1,28 @@
+.container {
+  width: 500px;
+  background-color: lightgray;
+  position: relative;
+  height: 300px;
+  border: 5px solid rgb(244, 244, 244);
+}
+
+.box1 {
+  background-color: cyan;
+  width: 250px;
+  height: 250px;
+}
+
+.box2 {
+  background-color: orange;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 15px;
+  left: 15px;
+}
+.container:first-child {
+  background-color: red;
+}
+.box:first-child {
+  background-color: green;
+}
