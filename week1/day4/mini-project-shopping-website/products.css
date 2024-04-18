@@ -121,6 +121,7 @@
 }
 .add-to-cart:hover {
   background-color: seagreen;
+  color: white;
 }
 
 .col__inner .badge-new,
