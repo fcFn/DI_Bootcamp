@@ -24,18 +24,19 @@
 .col__inner:hover {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
-.col__inner div {
+
+.icons {
+  position: relative;
   margin: 0 auto;
   width: max-content;
-}
-.col__inner .icons {
-  position: relative;
   top: 50%;
   display: none;
 }
 
 .tooltip {
   display: none;
+  width: max-content;
+  margin: 0 auto;
   font-family: sans-serif;
 }
 
@@ -45,7 +46,8 @@
 .icon:hover .tooltip {
   display: block;
 }
-.icon .tooltip {
+
+.tooltip {
   position: absolute;
   top: -25px;
   left: 50%;
@@ -56,7 +58,8 @@
   color: white;
   border: 1px solid black;
 }
-.icon .tooltip::after {
+
+.tooltip::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -66,7 +69,8 @@
   border-color: black transparent transparent transparent;
   transform: translateX(-50%);
 }
-.icons .icon {
+
+.icon {
   float: left;
   margin: 0 5px;
   border: 1px solid black;
@@ -75,11 +79,12 @@
   transform: translateY(-50%);
   position: relative;
 }
-.icons .icon:hover {
+
+.icon:hover {
   background-color: seagreen;
 }
 
-.col__inner .col__image {
+.col__image {
   background-size: cover;
   width: 200px;
   height: 300px;
@@ -150,6 +155,11 @@
   background-image: url("https://picsum.photos/200/300.jpg?random=16");
 }
 
+.product-name {
+  width: max-content;
+  margin: 0 auto;
+}
+
 .col__outer:first-child {
   padding-left: 0;
 }
@@ -158,10 +168,11 @@
   padding-right: 0;
 }
 
-.col__inner .price {
+.price {
   color: green;
   height: 25px;
   margin: 10px auto;
+  width: max-content;
 }
 
 .strike {
@@ -189,8 +200,9 @@
   color: white;
 }
 
-.col__inner .badge-new,
-.col__inner .badge-discount {
+.badge-new,
+.badge-discount {
+  margin: 0 auto;
   display: table;
   border-radius: 999px;
   background-color: seagreen;
@@ -206,7 +218,7 @@
   top: 2%;
   left: 15px;
 }
-.col__inner .badge-new,
+
 .col__inner .badge-discount {
   background-color: maroon;
   font-weight: bold;

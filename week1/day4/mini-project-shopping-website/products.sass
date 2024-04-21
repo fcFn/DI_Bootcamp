@@ -21,17 +21,17 @@
   &:hover
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)
 
-  & div
-    margin: 0 auto
-    width: max-content
-
-  & .icons
-    position: relative
-    top: 50%
-    display: none
+.icons
+  position: relative
+  margin: 0 auto
+  width: max-content
+  top: 50%
+  display: none
 
 .tooltip
   display: none
+  width: max-content
+  margin: 0 auto
   font-family: sans-serif
 
 .icon
@@ -40,49 +40,52 @@
   &:hover .tooltip
     display: block
 
-  & .tooltip
-    position: absolute
-    top: -25px
-    left: 50%
-    transform: translateX(-50%)
-    padding: 0 5px
-    text-align: center
-    background-color: black
-    color: white
-    border: 1px solid black
+.tooltip
+  position: absolute
+  top: -25px
+  left: 50%
+  transform: translateX(-50%)
+  padding: 0 5px
+  text-align: center
+  background-color: black
+  color: white
+  border: 1px solid black
 
-  & .tooltip::after
-    content: ""
-    position: absolute
-    top: 100%
-    left: 50%
-    border-width: 5px
-    border-style: solid
-    border-color: black transparent transparent transparent
-    transform: translateX(-50%)
+.tooltip::after
+  content: ""
+  position: absolute
+  top: 100%
+  left: 50%
+  border-width: 5px
+  border-style: solid
+  border-color: black transparent transparent transparent
+  transform: translateX(-50%)
 
-  &s &
-    float: left
-    margin: 0 5px
-    border: 1px solid black
-    background-color: white
-    padding: 10px
-    transform: translateY(-50%)
-    position: relative
+.icon
+  float: left
+  margin: 0 5px
+  border: 1px solid black
+  background-color: white
+  padding: 10px
+  transform: translateY(-50%)
+  position: relative
 
-  &s &:hover
-    background-color: seagreen
+.icon:hover
+  background-color: seagreen
 
-.col__inner .col__image
+.col__image
   background-size: cover
   width: 200px
   height: 300px
   position: relative
 
-@each $int in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
+@each $int in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
   .random-image-#{$int}
     background-image: url("https://picsum.photos/200/300.jpg?random=#{$int}")
 
+.product-name
+  width: max-content
+  margin: 0 auto
 
 .col__outer:first-child
   padding-left: 0
@@ -90,10 +93,11 @@
 .col__outer:last-child
   padding-right: 0
 
-.col__inner .price
+.price
   color: green
   height: 25px
   margin: 10px auto
+  width: max-content
 
 .strike
   color: gray
@@ -118,8 +122,9 @@
     background-color: seagreen
     color: white
 
-.col__inner .badge-new,
-.col__inner .badge-discount
+.badge-new,
+.badge-discount
+  margin: 0 auto
   display: table
   border-radius: 999px
   background-color: seagreen
@@ -135,12 +140,12 @@
   top: 2%
   left: 15px
 
-  &
-    background-color: maroon
-    font-weight: bold
-    font-family: sans-serif
-    left: unset
-    right: 15px
+.col__inner .badge-discount
+  background-color: maroon
+  font-weight: bold
+  font-family: sans-serif
+  left: unset
+  right: 15px
 
 .col__inner .badge-container
   display: table-cell
