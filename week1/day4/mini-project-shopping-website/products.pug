@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="products.css")
+    link(
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    )
+    title Ultramoist Fashion Products
+  body 
+    each k in [1,5,13]
+      .row
+        each val in [0, 1, 2, 3]
+          .col__outer
+            .col__inner
+              - var product_number = k + val
+              .col__image(class="random-image-" + product_number)
+                .icons
+                  each icon in [["eye", "View"],["bag-shopping", "Add to wishlist"],["shopping-cart", "Add to cart"]]
+                    div.icon
+                      div.tooltip #{icon[1]}
+                      div(class="fa-solid fa-"+icon[0])
+                .badge-new
+                  .badge-container new
+                .badge-discount
+                  .badge-container -10%
+              div Mystery item ##{product_number}
+              .price $666.66 
+                span.strike $777.77
+              button.add-to-cart Add to cart

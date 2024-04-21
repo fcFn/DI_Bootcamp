@@ -11,10 +11,10 @@
   width: 100%;
   margin-bottom: 10px;
 }
-
 .col__outer:hover .icons {
   display: block;
 }
+
 .col__inner {
   margin: 0 auto;
   position: relative;
@@ -24,7 +24,6 @@
 .col__inner:hover {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
-
 .col__inner div {
   margin: 0 auto;
   width: max-content;
@@ -34,10 +33,12 @@
   top: 50%;
   display: none;
 }
+
 .tooltip {
   display: none;
   font-family: sans-serif;
 }
+
 .icon {
   position: relative;
 }
@@ -77,12 +78,76 @@
 .icons .icon:hover {
   background-color: seagreen;
 }
+
 .col__inner .col__image {
-  background-image: url("https://fastly.picsum.photos/id/859/200/300.jpg?hmac=Ty9c6r04FYgwfkw5JMqSLG_eMq0RxeaMTAArotTX6Qk");
   background-size: cover;
   width: 200px;
   height: 300px;
   position: relative;
+}
+
+.random-image-1 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=1");
+}
+
+.random-image-2 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=2");
+}
+
+.random-image-3 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=3");
+}
+
+.random-image-4 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=4");
+}
+
+.random-image-5 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=5");
+}
+
+.random-image-6 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=6");
+}
+
+.random-image-7 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=7");
+}
+
+.random-image-8 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=8");
+}
+
+.random-image-9 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=9");
+}
+
+.random-image-10 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=10");
+}
+
+.random-image-11 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=11");
+}
+
+.random-image-12 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=12");
+}
+
+.random-image-13 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=13");
+}
+
+.random-image-14 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=14");
+}
+
+.random-image-15 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=15");
+}
+
+.random-image-16 {
+  background-image: url("https://picsum.photos/200/300.jpg?random=16");
 }
 
 .col__outer:first-child {
@@ -141,7 +206,7 @@
   top: 2%;
   left: 15px;
 }
-
+.col__inner .badge-new,
 .col__inner .badge-discount {
   background-color: maroon;
   font-weight: bold;
@@ -173,3 +238,5 @@
     width: 190px;
   }
 }
+
+/*# sourceMappingURL=products.css.map */
