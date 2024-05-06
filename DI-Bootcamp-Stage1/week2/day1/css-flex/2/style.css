@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 100%;
+  gap: 3px;
+}
+
+.item {
+  background-color: skyblue;
+  height: 100px;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.middle {
+  width: 50px;
+}

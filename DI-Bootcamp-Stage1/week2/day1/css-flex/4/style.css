@@ -1,0 +1,36 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 5px;
+  border: 3px solid red;
+  padding: 5px;
+}
+
+.item {
+  background-color: skyblue;
+  height: 100px;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.top,.bottom {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.middle {
+  width: 100%;
+}
