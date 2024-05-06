@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-template-rows: repeat(16, 50px);
+  grid-template-columns: repeat(16, 50px);
+  gap: 5px;
+}
+
+.grid-item {
+  background-color: rgb(255, 149, 0);
+}
+.grid-item:nth-of-type(3n + 2) {
+  background-color: rgba(241, 171, 109, 0.868);
+}
+.grid-item:nth-of-type(3n + 3) {
+  background-color: rgb(158, 79, 19);
+}
