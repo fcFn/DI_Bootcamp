@@ -70,3 +70,9 @@
   grid-row: 1 / -1;
   grid-column: 14;
 }
+
+.grid-item:nth-of-type(24) {
+  background-color: rgba(244, 75, 75, 0.6);
+  grid-row: 1 / -1;
+  grid-column: 16;
+}
