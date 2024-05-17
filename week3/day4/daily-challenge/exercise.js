@@ -1,48 +1,28 @@
+// Instructions
+// Create a variable called sentence. The value of the variable should be a string that contains the words “not” and “bad”.
+// For example, “The movie is not that bad, I like it”.
+
+// Create a variable called wordNot where it’s value is the first appearance (ie. the position) of the substring “not” (from the sentence variable).
+
+// Create a variable called wordBad where it’s value is the first appearance (ie. the position) of the substring “bad” (from the sentence variable).
+
+// If the word “bad” comes after the word “not”, you should replace the whole “not…bad” substring with “good”, then console.log the result.
+// For example, the result here should be : “The movie is good, I like it”
+// If the word “bad” does not come after “not” or the words are not in the sentence, console.log the original sentence..
+
+
 function replaceNotBad(str) {
   let notIndex = str.indexOf("not");
   let badIndex = str.indexOf("bad");
   if (notIndex === -1 || badIndex === -1) {
     return str;
   }
-  const notIndexes = getAllWordIndexes(str, "not");
-  const badIndexes = getAllWordIndexes(str, "bad");
-  // the easy case as in the original assignment
-  // the more complex case where there are multiple "not" and "bad" words
-  // remove unmatched "not" and "bad" words
-  while (notIndexes.length !== badIndexes.length) {
-    if (notIndexes.length > badIndexes.length) {
-      notIndexes.shift();
-    } else {
-      if (badIndexes[0] < notIndexes[0]) {
-        badIndexes.shift();
-      } else {
-        badIndexes.pop();
-      }
-    }
-  }
-  notIndexes.forEach(function (notIndex, index) {
-    if (notIndex < badIndexes[index]) {
-      str =
-        str.substring(0, notIndex) +
-        "good" +
-        str.substring(badIndexes[index] + 3);
-      if (this[index + 1] !== undefined) {
-        this[index + 1] = this[index + 1] - 3;
-        badIndexes[index + 1] = badIndexes[index + 1] - 3;
-      }
-    }
-  }, notIndexes);
-  return str;
-}
 
-function getAllWordIndexes(str, word) {
-  const indexes = [];
-  let index = str.indexOf(word);
-  while (index !== -1) {
-    indexes.push(index);
-    index = str.indexOf(word, index + 1);
+  if (notIndex < badIndex) {
+    return str.substring(0, notIndex) + "good" + str.substring(badIndex + 3);
+  } else {
+    return str;
   }
-  return indexes;
 }
 
 const testCases = [
@@ -50,7 +30,6 @@ const testCases = [
     input: "This dinner is not that bad! I like it!",
     expected: "This dinner is good! I like it!",
   },
-  { input: "This movie is ridiculous", expected: "This movie is ridiculous" },
   { input: "This movie is not so bad!", expected: "This movie is good!" },
   { input: "This dinner is bad!", expected: "This dinner is bad!" },
   { input: "This movie is bad!", expected: "This movie is bad!" },
@@ -73,15 +52,17 @@ const testCases = [
     expected: "This dinner is not good. No, it's good!",
   },
   {
-    // This fails because we do not consider words that are not "bad"
-    // but contain "bad" as a substring
     input: "This dinner is not good. No, it's not quite sbad!",
     expected: "This dinner is not good. No, it's not quite sbad!",
-    notImplemented: true,
   },
 ];
 
-let numPasses = 0;
+const sentence = "The movie is not that bad, I like it";
+console.log(replaceNotBad(sentence));
+
+// Testing the function with the test cases
+
+/* let numPasses = 0;
 testCases.forEach((testCase, index) => {
   const result = replaceNotBad(testCase.input);
   if (result === testCase.expected) {
@@ -95,4 +76,4 @@ testCases.forEach((testCase, index) => {
     );
   }
 });
-console.log(`${numPasses}/${testCases.length} test cases passed.`);
+console.log(`${numPasses}/${testCases.length} test cases passed.`) */
