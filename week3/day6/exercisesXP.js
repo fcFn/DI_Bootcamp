@@ -39,7 +39,7 @@ people.indexOf("Mary");
 
 const peopleCopy = people.slice(1, 3);
 
-console.log(people.indexOf("Foo"));
+console.log(people.indexOf("Foo")); // It returns -1 because "Foo" is not in the array
 
 const last = people[people.length - 1];
 
