@@ -48,10 +48,10 @@ for (let i = 0; i < people.length; i++) {
 }
 
 for (let i = 0; i < people.length; i++) {
+  console.log(people[i]);
   if (people[i] === "Devon") {
     break;
   }
-  console.log(people[i]);
 }
 
 // 🌟 Exercise 2 : Your Favorite Colors
