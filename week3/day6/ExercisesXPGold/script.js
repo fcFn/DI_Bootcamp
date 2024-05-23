@@ -46,6 +46,8 @@ let studentName = prompt("What is your name?");
 
 if (studentName.toLowerCase() in guestList) {
     console.log(`Hi! I'm ${studentName}, and I'm from ${guestList[studentName]}.`);
+} else {
+    console.log("Hi! I'm a guest.");
 }
 
 // Exercise 3 : Playing With Numbers
