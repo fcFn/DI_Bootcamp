@@ -14,20 +14,30 @@
 
 const hasArticle = string => ["a", "an", "the"].includes(string.split(" ")[0]);
 
-// Tagged template that adds "a" or "an" before a word
-const a = (_, word) => {
-  // If the word already starts with an article
-  // or if the word is a proper noun,
-  // don't add an article.
+// Adds an article to a word if it doesn't already have one
+// or if it doesn't start with a capital letter
+const addArticle = word => {
   if (hasArticle(word) || word[0] === word[0].toUpperCase()) {
     return word;
   }
-  // If the word starts with a vowel or "h" and is not capitalized
   const article = "aeiouh".includes(word[0]) ? "an" : "a";
   return `${article} ${word}`;
 };
 
-const noArticle = (_, word) => {
+// Tagged template literal function that adds articles to interpolated words
+const a = (strings, ...words) => {
+  const processedWords = words.map(addArticle);
+  let result = strings[0];
+  for (let i = 0; i < processedWords.length; i++) {
+    if (strings[i + 1] === " ") {
+      processedWords[i + 1] = removeArticle(processedWords[i + 1]);
+    }
+    result += processedWords[i] + strings[i + 1];
+  }
+  return result;
+};
+
+const removeArticle = word => {
   if (hasArticle(word)) {
     return word.split(" ").slice(1).join(" ");
   }
@@ -45,9 +55,9 @@ const createStories = () => {
       return cache[key];
     }
     const stories = [
-      `Once upon a time, there was ${a`${adjective}`} ${noArticle`${noun}`} named ${person}. ${person} loved to ${verb} in ${a`${place}`}.`,
-      `In ${a`${place}`}, ${person} found ${a`${adjective}`} ${noArticle`${noun}`}. ${person} decided to ${verb} it.`,
-      `There was ${a`${adjective}`} ${noArticle`${noun}`} in ${a`${place}`}. ${person} wanted to ${verb} it, so ${person} did.`,
+      a`Once upon a time, there was ${adjective} ${noun} named ${person}. ${person} loved to ${verb} in ${place}.`,
+      a`In ${place}, ${person} found ${adjective} ${noun}. ${person} decided to ${verb} it.`,
+      a`There was ${adjective} ${noun} in ${place}. ${person} wanted to ${verb} it, so ${person} did.`,
     ];
     cache[key] = stories;
     return stories;
