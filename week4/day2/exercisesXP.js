@@ -296,6 +296,8 @@ function totalVacationCost() {
   return total;
 }
 
-// NB: This makes the Live Preview hang for some reason (but it will still work
-// if the document is served to a browser via the Live Preview).
+// Calling totalVacationCost in Live Preview will hang VS Code as it goes into
+// infinite loop due to the sandboxed document which doesn't allow to use prompt
+// without allow-modals flag in Content Security Policy. Use a real browser 
+// instead.
 alert(`The total cost of your vacation is $${totalVacationCost()}`)
