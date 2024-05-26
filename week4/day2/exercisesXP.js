@@ -50,7 +50,7 @@ infoAboutPerson("Josh", 12, "yellow");
 // Call the calculateTip() function.
 
 function calculateTip() {
-  const amount = promt("Enter the amount");
+  const amount = prompt("Enter the amount");
   let tip = 0;
   if (amount < 50) {
     tip = amount * 0.2;
