@@ -205,10 +205,7 @@ function changeEnough(itemPrice, amountOfChange) {
     (acc, val, index) => acc + val * change[index],
     0
   );
-  if (sumOfChange >= itemPrice) {
-    return true;
-  }
-  return false;
+  return sumOfChange >= itemPrice
 }
 
 testCases = [
