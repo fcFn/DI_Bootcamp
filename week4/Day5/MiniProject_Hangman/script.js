@@ -12,20 +12,35 @@
 // Prompt player 1 for a word that has a minimum of 8 characters
 let word = "";
 while (word.length < 8) {
-  word = prompt("Enter a word with at least 8 characters: ")
+  word = prompt("Enter a word with at least 8 characters: ");
 }
 
 // Prompt player 2 to guess the word
-let guessedWord = ""
+let guessedWord = "";
 let chances = 10;
 let guessedLetters = [];
 let correctLetters = [];
 let wordArray = word.toLowerCase().split("");
 let correct = false;
-
 while (chances > 0 && !correct) {
-  guessedWord = prompt(`Guess the word: ${wordArray.map(letter => correctLetters.includes(letter) ? letter : "*").join(" ")}`);
-  if (guessedWord.toLowerCase() === word) {
+  let correctLettersCount = 0; // to check if the player has guessed all the correct letters
+  const wordToGuess = wordArray
+    .map((letter) => {
+      if (correctLetters.includes(letter)) {
+        correctLettersCount++;
+        return letter;
+      }
+      return "*";
+    })
+    .join("");
+  if (correctLettersCount === wordArray.length) {
+    correct = true;
+    break;
+  }
+  guessedWord = prompt(`Guess the word: ${wordToGuess}`);
+  if (
+    guessedWord.toLowerCase() === word.toLowerCase() 
+  ) {
     correct = true;
   } else if (guessedWord.toLowerCase().length === 1) {
     if (guessedLetters.includes(guessedWord)) {
@@ -41,9 +56,6 @@ while (chances > 0 && !correct) {
 
 if (correct) {
   alert("Congratulations! You guessed the word.");
-}
-else {
+} else {
   alert(`You ran out of chances. The word was ${word}`);
 }
-
-
