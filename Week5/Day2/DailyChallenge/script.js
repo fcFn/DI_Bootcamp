@@ -1,4 +1,4 @@
-// nstructions
+// Instructions
 // In todays exercise we will be creating a Mad Libs game.
 // If you’ve never played this game, a mad lib is a game where you fill in a bunch of blank inputs with different word types (ie : noun, adjective, verb), and then a story is generated based on the words you chose, and sometimes the story is surprisingly funny.
 
@@ -17,6 +17,7 @@ const hasArticle = string => ["a", "an", "the"].includes(string.split(" ")[0]);
 // Adds an article to a word if it doesn't already have one
 // or if it doesn't start with a capital letter
 const addArticle = word => {
+  if (word.startsWith("***")) return word.slice(3)
   if (hasArticle(word) || word[0] === word[0].toUpperCase()) {
     return word;
   }
@@ -51,13 +52,14 @@ const createStories = () => {
   const cache = {};
   return (noun, adjective, person, verb, place) => {
     const key = `${noun}-${adjective}-${person}-${verb}-${place}`;
+    const markedVerb = `***${verb}`
     if (cache[key]) {
       return cache[key];
     }
     const stories = [
-      a`Once upon a time, there was ${adjective} ${noun} named ${person}. ${person} loved to ${verb} in ${place}.`,
-      a`In ${place}, ${person} found ${adjective} ${noun}. ${person} decided to ${verb} it.`,
-      a`There was ${adjective} ${noun} in ${place}. ${person} wanted to ${verb} it, so ${person} did.`,
+      a`Once upon a time, there was ${adjective} ${noun} named ${person}. ${person} loved to ${markedVerb} in ${place}.`,
+      a`In ${place}, ${person} found ${adjective} ${noun}. ${person} decided to ${markedVerb} it.`,
+      a`There was ${adjective} ${noun} in ${place}. ${person} wanted to ${markedVerb} it, so ${person} did.`,
     ];
     cache[key] = stories;
     return stories;
