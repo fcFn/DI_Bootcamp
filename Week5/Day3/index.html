@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    /* A banner about a sale that is ending soon */
+    .banner {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .banner__title {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .banner__description {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .banner__countdown {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .banner__countdown-label {
+        font-weight: bold;
+    }
+
+    .banner__countdown-timer {
+        font-weight: bold;
+        color: #721c24;
+    }
+</style>
+<body>
+    <!-- A banner about a sale that is ending soon -->
+    <div class="banner">
+        <h1 class="banner__title">Sale Ending Soon!</h1>
+        <p class="banner__description">Hurry up and get your favorite items before the sale ends!</p>
+        <div class="banner__countdown">
+            <span class="banner__countdown-label">Sale ends in:</span>
+            <span class="banner__countdown-timer">10min</span>
+        </div>
+        <script>
+          const banner = document.querySelector('.banner');
+          banner.style.display = 'none';
+          setTimeout(() => {
+            banner.style.display = 'block';
+            for (let i = 10; i >= 0; i--) {
+              setTimeout(() => {
+                document.querySelector('.banner__countdown-timer').textContent = `${i}min`;
+              }, (10 - i) * 1000);
+            }
+          }, 5000);
+
+        </script>
+</body>
+</html>
