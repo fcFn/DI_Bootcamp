@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+#game-container {
+  display: grid;
+  grid-template-columns: 200px auto;
+  background-color: #a9a9a9;
+  border: 1px solid black;
+  width: 80%;
+  margin: auto;
+}
+
+#sidebar {
+  grid-column: 1;
+  padding: 5px;
+  overflow: auto;
+}
+
+#clear {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 22px;
+}
+
+#colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+#colors div {
+  height: 70px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+#colors input:checked ~ div {
+  border: 2px solid #000;
+}
+
+#colors input {
+  position: absolute;
+  opacity: 0;
+}
+
+#colors div:hover {
+  border: 2px solid #000;
+}
+
+#colors label:nth-last-child(-n + 2) div:hover {
+  border: 1px solid white;
+}
+
+#colors input {
+  visibility: hidden;
+}
+
+#colors label:nth-last-child(-n + 2) div {
+  border: 1px solid white;
+}
+
+#colors label:nth-last-child(-n + 2) input:checked ~ div {
+  border: 2px solid white;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(60, 1fr);
+  grid-column: 2;
+  padding: 5px 5px 5px 0;
+}
+#grid div {
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+}
+
+#grid div:nth-child(60n) {
+  border-right: none;
+}
+
+#grid div:nth-last-child(-n + 60) {
+  border-bottom: none;
+}
