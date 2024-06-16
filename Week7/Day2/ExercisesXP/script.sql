@@ -94,7 +94,7 @@ WHERE film_id = 15 OR film_id = 150;
 SELECT film_id, title, description, length, rental_rate FROM film
 WHERE title = 'The Dark Knight';
 SELECT film_id, title, description, length, rental_rate FROM film
-WHERE title LIKE 'The%';
+WHERE title LIKE 'Th%';
 SELECT * FROM film
 ORDER BY rental_rate
 LIMIT 10;
