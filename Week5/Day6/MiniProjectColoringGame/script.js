@@ -19,7 +19,7 @@ var colors = [
   "lightgray",
   "gray",
   "black",
-  "white"
+  "white",
 ];
 var isMouseDown = false;
 var selectedColor = "black";
@@ -38,7 +38,9 @@ colors.forEach(function (color) {
   checkbox.addEventListener("change", function () {
     if (this.checked) {
       selectedColor = color;
-      var otherCheckboxes = document.querySelectorAll('#colors input[type="checkbox"]');
+      var otherCheckboxes = document.querySelectorAll(
+        '#colors input[type="checkbox"]'
+      );
       otherCheckboxes.forEach(function (otherCheckbox) {
         if (otherCheckbox !== checkbox) {
           otherCheckbox.checked = false;
@@ -48,7 +50,7 @@ colors.forEach(function (color) {
   });
 
   colorDiv.style.backgroundColor = color;
-  if (color === 'black') {
+  if (color === "black") {
     checkbox.checked = true;
   }
   colorDiv.classList.add("color-box");
