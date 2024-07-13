@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboFriends</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://github.com/devtlv/studentsGitHub/blob/master/JS/Week%204/Day5/Mini%20Projects/Mini%20Project%201%20(Robots)/circuit-pattern.png?raw=true');
+            background-size: contain;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            display: flex;
+            gap: 10px;
+        }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+        }
+        #searchBox {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #robotContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .robot-card {
+            background-color: hotpink;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+        }
+        .robot-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+        .robot-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    Instructions:
+    PART I : The Website
+    1. The webpage displays Cards of Robots with their respective image and information.
+    2. You have to create the cards by using the values from the array of objects provided in the ASSETS below.
+
+    PART II : The Filter
+    1. When you search for a specific name in the search box, the webpage filters the cards displayed. For example is you write "nic" in the search box, you will display the robot which name contains "nic", which means only one robot: "Nicholas".
+    2. Display the cards in the DOM, using DOM elements and selectors, and `filter` them with the search box.
+
+    PART II : The Style
+    1. You can use your own images or use this website to generate a new Robot Image.
+    2. Check out those links to generate the correct font
+       * cdnfonts
+       * dafont
+    -->
+    <header>
+        <h1>RoboFriends</h1>
+        <input type="text" id="searchBox" placeholder="Search robots...">
+    </header>
+    <div id="robotContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

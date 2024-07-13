@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--
+    Instructions:
+    You will create a currencies converter:
+
+    In this application we're going receive data from two asynchronous sources.
+    You will use :
+    * https://www.exchangerate-api.com API
+    * Create your own API key by signing up - you will be able to make more requests :)
+
+    Note:
+    1. The program should take the currency which the user currently has and the currency in which they would like to receive, as well as the amount of money. Afterwards, the program will output the correct exchange rate based on the data from the APIs.
+    2. First, you need to fetch all the supported currencies, in order to add the currencies options (ie FROM - To) in the currency converter. Check out this page on Supported Codes Endpoint from the ExchangeRate API documentation.
+    3. To convert from a currency, to another one, you need to fetch conversion rate from the Pair Conversion API endpoint. Check out this page on Pair conversion requests from the ExchangeRate API documentation. Hint: You could also supply an optional AMOUNT variable in the query of the request.
+    4. Bonus: Add this "switch" button on the page, when clicked on it will switch the currencies and display the new amount converted. Example : if the conversion was from EUR to GBP, as soon as the button is clicked on, the conversion should be from GBP to EUR.
+    -->
+    <div class="container">
+      <h1>The<br/>Currency Converter</h1>
+      <div class="converter">
+          <div class="input-group">
+              <label for="amount">Amount:</label>
+              <input type="number" id="amount" min="0" step="0.01" value="1">
+          </div>
+          <div class="input-group">
+              <label for="from-currency">From:</label>
+              <select id="from-currency"></select>
+          </div>
+          <button id="switch-currencies">⇄</button>
+          <div class="input-group">
+              <label for="to-currency">To:</label>
+              <select id="to-currency"></select>
+          </div>
+          <button id="convert">Convert</button>
+      </div>
+      <div id="result"></div>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
