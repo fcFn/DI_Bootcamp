@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Fitness App</h1>
+    <div id="content">
+        <h2>Create Entity</h2>
+        <form id="entity-form">
+            <select id="entity-type" required>
+                <option value="">Select Entity Type</option>
+                <option value="exercise">Exercise</option>
+                <option value="workout">Workout</option>
+                <option value="user">User</option>
+            </select>
+            <div id="user-select-container" style="display: none;">
+                <select id="user-select">
+                    <option value="">Select User</option>
+                </select>
+            </div>
+            <div id="exercise-fields" style="display: none;">
+                <input type="text" id="exercise-name" placeholder="Name">
+                <input type="text" id="exercise-description" placeholder="Description">
+                <input type="text" id="exercise-muscle_group" placeholder="Muscle Group">
+            </div>
+            <div id="workout-fields" style="display: none;">
+                <input type="text" id="workout-title" placeholder="Title">
+                <input type="text" id="workout-description" placeholder="Description">
+                <div id="workout-exercises">
+                    <label>Exercises:</label>
+                    <div id="exercise-select-container">
+                        <select class="exercise-select">
+                            <option value="">Select Exercise</option>
+                        </select>
+                    </div>
+                    <button type="button" id="add-exercise-row">Add Exercise</button>
+                </div>
+            </div>
+            <div id="user-fields" style="display: none;">
+                <input type="text" id="user-username" placeholder="Username">
+                <input type="email" id="user-email" placeholder="Email">
+                <input type="password" id="user-password" placeholder="Password">
+            </div>
+            <button type="submit">Create</button>
+        </form>
+        <h2>Exercises</h2>
+        <table id="exercises-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Muscle Group</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h2>Workouts</h2>
+        <table id="workouts-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Created By</th>
+                    <th>Exercises</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h2>Users</h2>
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
