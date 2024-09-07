@@ -1,0 +1,74 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Guessing Game</title>
+</head>
+<body>
+    <h1>Emoji Guessing Game!</h1>
+    <div id="game"></div>
+    <div id="feedback"></div>
+    <div id="leaderboard"></div>
+
+    <script>
+        async function fetchEmoji() {
+            const response = await fetch('/emoji');
+            return response.json();
+        }
+
+        async function submitGuess(player, guess, correct) {
+            const response = await fetch('/guess', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ player, guess, correct })
+            });
+            return response.json();
+        }
+
+        async function fetchLeaderboard() {
+            const response = await fetch('/leaderboard');
+            return response.json();
+        }
+
+        async function startGame() {
+            const player = prompt("Enter your name:");
+            let emojiData = await fetchEmoji();
+            renderGame(emojiData, player);
+            renderLeaderboard();
+        }
+
+        function renderGame(emojiData, player) {
+            const gameDiv = document.getElementById('game');
+            gameDiv.innerHTML = `
+                <p>${emojiData.emoji}</p>
+                ${emojiData.options.map(option => `<button onclick="handleGuess('${player}', '${option}', '${emojiData.correct}')">${option}</button>`).join('')}
+            `;
+        }
+
+        async function handleGuess(player, guess, correct) {
+            const feedbackDiv = document.getElementById('feedback');
+            const result = await submitGuess(player, guess, correct);
+            feedbackDiv.innerHTML = result.correct ? 'Correct!' : 'Wrong!';
+            feedbackDiv.innerHTML += `<p>Your score: ${result.score}</p>`;
+            const emojiData = await fetchEmoji();
+            renderGame(emojiData, player);
+            renderLeaderboard();
+        }
+
+        async function renderLeaderboard() {
+            const leaderboardDiv = document.getElementById('leaderboard');
+            const leaderboard = await fetchLeaderboard();
+            leaderboardDiv.innerHTML = '<h2>Leaderboard</h2>';
+            leaderboard.forEach(([player, score]) => {
+                leaderboardDiv.innerHTML += `<p>${player}: ${score}</p>`;
+            });
+        }
+
+        startGame();
+    </script>
+</body>
+</html>
